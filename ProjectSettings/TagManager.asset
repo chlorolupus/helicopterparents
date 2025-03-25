@@ -8,6 +8,7 @@ TagManager:
   - Kid
   - Heal
   - Ammo
+  - Fighter
   layers:
   - Default
   - TransparentFX

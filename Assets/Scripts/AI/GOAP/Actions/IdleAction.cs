@@ -2,9 +2,9 @@ using CrashKonijn.Agent.Core;
 using CrashKonijn.Goap.Runtime;
 using UnityEngine;
 
-namespace CrashKonijn.Goap.AIGOAPGenerator
+namespace HelicopterParents.Goap
 {
-    [GoapId("Idle-51f4f0f1-1896-4dfd-b891-ea023c8da82b")]
+    [GoapId("Idle-1459e470-31f8-45e4-bbf7-937a1ebe87d5")]
     public class IdleAction : GoapActionBase<IdleAction.Data>
     {
         // This method is called when the action is created

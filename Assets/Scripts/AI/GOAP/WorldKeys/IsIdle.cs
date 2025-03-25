@@ -1,7 +1,7 @@
 using CrashKonijn.Goap.Runtime;
 
-namespace CrashKonijn.Goap.AIGOAPGenerator
+namespace HelicopterParents.Goap
 {
-    [GoapId("IsIdle-df23f764-cfad-4c78-8995-751d077312f2")]
+    [GoapId("IsIdle-e61a1c04-9e48-4506-84b6-4faac874e568")]
     public class IsIdle : WorldKeyBase {}
 }

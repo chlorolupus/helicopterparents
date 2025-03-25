@@ -1,21 +1,19 @@
 using CrashKonijn.Agent.Core;
-using CrashKonijn.Goap.Runtime;
 using UnityEngine;
+using CrashKonijn.Goap.Core;
+using CrashKonijn.Goap.Runtime;
 
-namespace CrashKonijn.Goap.AIGOAPGenerator
+namespace HelicopterParents.Goap
 {
-    // Defining a GoapId is only necessary when using the ScriptableObject configuration method.
-    [GoapId("IdleTargetSensor-c34e9575-d171-4044-9b83-a91a1c32e214")]
     public class IdleTargetSensor : LocalTargetSensorBase
     {
-        private static readonly Bounds Bounds = new(Vector3.zero, new Vector2(15, 8));
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        private static readonly Bounds Bounds = new(Vector3.zero, new Vector2(100, 100));
+        // Update is called once per frame
+        public override void Created()
+        {
+        }
 
-        // Is called when this script is initialzed
-        public override void Created() { }
-
-        // Is called every frame that an agent of an `AgentType` that uses this sensor needs it.
-        // This can be used to 'cache' data that is used in the `Sense` method.
-        // Eg look up all the trees in the scene, and then find the closest one in the Sense method.
         public override void Update() { }
 
         public override ITarget Sense(IActionReceiver agent, IComponentReference references, ITarget existingTarget)
@@ -30,7 +28,6 @@ namespace CrashKonijn.Goap.AIGOAPGenerator
 
             return new PositionTarget(random);
         }
-
         private Vector3 GetRandomPosition(IActionReceiver agent)
         {
             var random = Random.insideUnitCircle * 3f;
