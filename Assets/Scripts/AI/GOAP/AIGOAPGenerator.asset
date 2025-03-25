@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0857b2a53377458ebec6c4b1179e3c5a, type: 3}
+  m_Name: AIGOAPGenerator
+  m_EditorClassIdentifier: 
+  nameSpace: CrashKonijn.Goap.AIGOAPGenerator
+  scripts:
+    goals:
+    - <Name>k__BackingField: FindAmmoGoal
+      fullName: CrashKonijn.Goap.AIGOAPGenerator.FindAmmoGoal, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      <Path>k__BackingField: Assets/Scripts/AI/GOAP/Goals/FindAmmoGoal.cs
+      <Id>k__BackingField: FindAmmo-37902264-062b-46fb-b550-380ae19a4f31
+    - <Name>k__BackingField: IdleGoal
+      fullName: CrashKonijn.Goap.AIGOAPGenerator.IdleGoal, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      <Path>k__BackingField: Assets/Scripts/AI/GOAP/Goals/IdleGoal.cs
+      <Id>k__BackingField: Idle-2da7389b-c45f-43ff-9375-487e1f89b7d5
+    - <Name>k__BackingField: RefillAmmoGoal
+      fullName: CrashKonijn.Goap.AIGOAPGenerator.RefillAmmoGoal, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      <Path>k__BackingField: Assets/Scripts/AI/GOAP/Goals/RefillAmmoGoal.cs
+      <Id>k__BackingField: RefillAmmo-c5ac0ce1-012c-47f7-b564-0cae436e5d4f
+    actions:
+    - <Name>k__BackingField: FindAmmoAction
+      fullName: CrashKonijn.Goap.AIGOAPGenerator.FindAmmoAction, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      <Path>k__BackingField: Assets/Scripts/AI/GOAP/Actions/FindAmmoAction.cs
+      <Id>k__BackingField: FindAmmo-bc47c18d-9982-466a-84be-4510d22b65d3
+    - <Name>k__BackingField: IdleAction
+      fullName: CrashKonijn.Goap.AIGOAPGenerator.IdleAction, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      <Path>k__BackingField: Assets/Scripts/AI/GOAP/Actions/IdleAction.cs
+      <Id>k__BackingField: Idle-51f4f0f1-1896-4dfd-b891-ea023c8da82b
+    - <Name>k__BackingField: RefillAmmoAction
+      fullName: CrashKonijn.Goap.AIGOAPGenerator.RefillAmmoAction, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      <Path>k__BackingField: Assets/Scripts/AI/GOAP/Actions/RefillAmmoAction.cs
+      <Id>k__BackingField: RefillAmmo-647929b4-0337-49ff-917d-c117a5c20bb9
+    worldSensors: []
+    worldKeys:
+    - <Name>k__BackingField: AmmoCount
+      fullName: CrashKonijn.Goap.AIGOAPGenerator.AmmoCount, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      <Path>k__BackingField: Assets/Scripts/AI/GOAP/WorldKeys/AmmoCount.cs
+      <Id>k__BackingField: AmmoCount-6fa269f5-d92d-4005-ac7f-1d17aed37ca1
+    - <Name>k__BackingField: IsIdle
+      fullName: CrashKonijn.Goap.AIGOAPGenerator.IsIdle, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      <Path>k__BackingField: Assets/Scripts/AI/GOAP/WorldKeys/IsIdle.cs
+      <Id>k__BackingField: IsIdle-df23f764-cfad-4c78-8995-751d077312f2
+    targetSensors:
+    - <Name>k__BackingField: IdleTargetSensor
+      fullName: CrashKonijn.Goap.AIGOAPGenerator.IdleTargetSensor, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      <Path>k__BackingField: Assets/Scripts/AI/GOAP/Sensors/IdleTargetSensor.cs
+      <Id>k__BackingField: IdleTargetSensor-c34e9575-d171-4044-9b83-a91a1c32e214
+    targetKeys:
+    - <Name>k__BackingField: ClosestAmmoCrate
+      fullName: CrashKonijn.Goap.AIGOAPGenerator.ClosestAmmoCrate, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      <Path>k__BackingField: Assets/Scripts/AI/GOAP/TargetKeys/ClosestAmmoCrate.cs
+      <Id>k__BackingField: ClosestAmmoCrate-3fd9afa5-2e19-4ba9-b1bc-0410f2e9f785
+    - <Name>k__BackingField: ClosestAmmoSupply
+      fullName: CrashKonijn.Goap.AIGOAPGenerator.ClosestAmmoSupply, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      <Path>k__BackingField: Assets/Scripts/AI/GOAP/TargetKeys/ClosestAmmoSupply.cs
+      <Id>k__BackingField: ClosestAmmoSupply-528c8a3b-187f-47de-bb1d-019c388853c8
+    - <Name>k__BackingField: IdleTarget
+      fullName: CrashKonijn.Goap.AIGOAPGenerator.IdleTarget, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      <Path>k__BackingField: Assets/Scripts/AI/GOAP/TargetKeys/IdleTarget.cs
+      <Id>k__BackingField: IdleTarget-88421cca-e5ab-4d8d-8a6d-f7d8d6902add
+    multiSensors: []

@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 875fbfa2d1734285b353878b31467c98, type: 3}
+  m_Name: IdleCapabilityConfig
+  m_EditorClassIdentifier: 
+  goals:
+  - goal:
+      <Name>k__BackingField: IdleGoal
+      <Id>k__BackingField: Idle-2da7389b-c45f-43ff-9375-487e1f89b7d5
+    baseCost: 1
+    conditions:
+    - worldKey:
+        <Name>k__BackingField: IsIdle
+        <Id>k__BackingField: IsIdle-df23f764-cfad-4c78-8995-751d077312f2
+      comparison: 2
+      amount: 1
+  actions:
+  - action:
+      <Name>k__BackingField: IdleAction
+      <Id>k__BackingField: Idle-51f4f0f1-1896-4dfd-b891-ea023c8da82b
+    target:
+      <Name>k__BackingField: IdleTarget
+      <Id>k__BackingField: IdleTarget-88421cca-e5ab-4d8d-8a6d-f7d8d6902add
+    properties:
+      rid: 6244513008216965394
+    baseCost: 1
+    stoppingDistance: 0.1
+    validateTarget: 1
+    requiresTarget: 1
+    validateConditions: 1
+    moveMode: 0
+    conditions: []
+    effects:
+    - worldKey:
+        <Name>k__BackingField: IsIdle
+        <Id>k__BackingField: IsIdle-df23f764-cfad-4c78-8995-751d077312f2
+      effect: 1
+  worldSensors: []
+  targetSensors:
+  - sensor:
+      <Name>k__BackingField: IdleTargetSensor
+      <Id>k__BackingField: IdleTargetSensor-c34e9575-d171-4044-9b83-a91a1c32e214
+    targetKey:
+      <Name>k__BackingField: IdleTarget
+      <Id>k__BackingField: IdleTarget-88421cca-e5ab-4d8d-8a6d-f7d8d6902add
+  multiSensors: []
+  generatorScriptable: {fileID: 11400000, guid: ae691c10495cc6d48be3814548d74177, type: 2}
+  references:
+    version: 2
+    RefIds:
+    - rid: 6244513008216965394
+      type: {class: EmptyActionProperties, ns: CrashKonijn.Agent.Runtime, asm: CrashKonijn.Agent.Runtime}
+      data: 

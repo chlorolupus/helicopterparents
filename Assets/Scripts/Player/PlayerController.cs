@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
+
 /// <summary>
 /// This class handles player input and move helicopter and casts ability to the map
 /// Also handles UI control.
@@ -19,7 +21,11 @@ public class PlayerController : MonoBehaviour
     public InputAction ammoAction;
     public InputAction flareAction;
     public InputAction scanAction;
+    public InputAction mouseLookAction;
     public int snipeCount = 3;
+    [FormerlySerializedAs("camera")] public Camera mainCamera;
+    public GameObject searchLightObject;
+    public Light searchLight;
     private void Awake()
     {
         for(int i = 0; i < abilitiesTimerObject.Length; i++)
@@ -41,20 +47,27 @@ public class PlayerController : MonoBehaviour
         ammoAction = InputSystem.actions.FindAction("Ammo");
         flareAction = InputSystem.actions.FindAction("Flare");
         scanAction = InputSystem.actions.FindAction("Scan");
-
-
+        mouseLookAction = InputSystem.actions.FindAction("MouseLook"); 
+        if(mainCamera==null)
+            mainCamera = Camera.main;
     }
 
     // Update is called once per frame
     void Update()
     {
         Vector2 moveValue = moveAction.ReadValue<Vector2>();
+        
+        Vector2 lookValue = lookAction.ReadValue<Vector2>();
+
+        var mouse = Mouse.current;
+        
         if (moveValue.x != 0 || moveValue.y != 0)
         {
             transform.position += new Vector3(moveValue.x, 0, moveValue.y) * Time.deltaTime;
         }
-
-        if (snipeAction.IsPressed() && snipeCount>0)
+        
+        if ((snipeAction.IsPressed() || (mouse != null && mouse.leftButton.wasPressedThisFrame))
+            && snipeCount>0)
         {
             if (!abilitiesTimers[0].recharging)
             {
@@ -63,6 +76,13 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (mouse != null)
+        {
+            Vector2 mouseLookValue = mouseLookAction.ReadValue<Vector2>();
+            searchLightObject.transform.position = this.transform.position + mainCamera.ScreenToWorldPoint( new Vector3(mouseLookValue.x, mouseLookValue.y, 30f));
+            Debug.Log("Searchlight position: " + mainCamera.ScreenToWorldPoint( new Vector3(mouseLookValue.x, mouseLookValue.y, 8f)));
+        }
+        
         if (healthAction.IsPressed())
         {
             if (!abilitiesTimers[1].recharging)
@@ -94,10 +114,14 @@ public class PlayerController : MonoBehaviour
                 abilitiesTimers[4].TriggerAbility();
             }
         }
-
+        
         if (searchlightAction.IsPressed())
         {
-            
+            searchLight.intensity = 4.0f;
+        }
+        else
+        {
+            searchLight.intensity = 1.0f;
         }
     }
 }
