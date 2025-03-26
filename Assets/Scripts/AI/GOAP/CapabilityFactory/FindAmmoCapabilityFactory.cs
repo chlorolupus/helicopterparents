@@ -6,22 +6,21 @@ using HelicopterParents.Goap.Sensors;
 
 namespace HelicopterParents.Goap.Capabilities
 {
-    public class IdleCapabilityFactory : CapabilityFactoryBase
+    public class FindAmmoCapabilityFactory : CapabilityFactoryBase
     {
         public override ICapabilityConfig Create()
         {
             var builder = new CapabilityBuilder("IdleCapability");
 
-            builder.AddGoal<IdleGoal>()
-                .AddCondition<IsIdle>(Comparison.GreaterThanOrEqual, 1)
+            builder.AddGoal<FindAmmoGoal>()
+                .AddCondition<NeedsAmmo>(Comparison.GreaterThanOrEqual, 1)
                 .SetBaseCost(2);
 
-            builder.AddAction<IdleAction>()
-                .AddEffect<IsIdle>(EffectType.Increase)
-                .SetTarget<IdleTarget>();
+            builder.AddAction<FindAmmoAction>()
+                .AddEffect<NeedsAmmo>(EffectType.Increase)
+                .SetTarget<ClosestAmmo>();
 
-            builder.AddTargetSensor<LocalIdleTargetSensor>()
-                .SetTarget<IdleTarget>();
+            builder.AddMultiSensor<FindAmmoMultiSensor>();
 
             return builder.Build();
         }

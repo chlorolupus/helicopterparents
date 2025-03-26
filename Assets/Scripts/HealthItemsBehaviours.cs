@@ -1,7 +1,7 @@
 using UnityEngine;
 namespace CrashKonijn.Goap.AIGOAPGenerator.Behaviours
 {
-    public class SupplyItems : MonoBehaviour
+    public class HealthItemsBehaviours : MonoBehaviour
     {
         public ItemType itemType;
 

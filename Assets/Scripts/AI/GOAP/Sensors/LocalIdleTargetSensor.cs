@@ -3,9 +3,9 @@ using UnityEngine;
 using CrashKonijn.Goap.Core;
 using CrashKonijn.Goap.Runtime;
 
-namespace HelicopterParents.Goap
+namespace HelicopterParents.Goap.Sensors
 {
-    public class IdleTargetSensor : LocalTargetSensorBase
+    public class LocalIdleTargetSensor : LocalTargetSensorBase
     {
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         private static readonly Bounds Bounds = new(Vector3.zero, new Vector2(100, 100));
