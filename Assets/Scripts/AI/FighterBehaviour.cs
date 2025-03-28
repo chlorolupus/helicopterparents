@@ -28,11 +28,13 @@ namespace HelicopterParents.Goap.Behaviours
         [FormerlySerializedAs("ScanRadiusGameObject")]
         public GameObject scanRadiusGameObject;
 
+        private AmmoItemsBehaviours _ownAmmoItemsBehaviours;
         void Awake()
         {
             scanRadiusGameObject = transform.Find("Visualizer_ScanRadius").gameObject;
             scanRadius = scanRadiusGameObject.transform.localScale.x / 2;
             this.agent = this.GetComponent<AgentBehaviour>();
+            this._ownAmmoItemsBehaviours = this.GetComponent<AmmoItemsBehaviours>();
         }
         private void OnEnable()
         {
@@ -89,26 +91,24 @@ namespace HelicopterParents.Goap.Behaviours
             if (this.currentTarget == null)
                 return;
         
-            this.transform.position = Vector3.MoveTowards(this.transform.position, new Vector3(this.currentTarget.Position.x, this.transform.position.y, this.currentTarget.Position.z), Time.deltaTime*10f);
-            
             //  I will do the navmesh part tomorrow on 26/3/2025 (after i am off work)
             var path = new NavMeshPath();
-            if (moveTarget != null)
+            if (currentTarget != null)
             {
-                nmAgent.CalculatePath(moveTarget.transform.position, path);
+                nmAgent.CalculatePath(currentTarget.Position, path);
 
                 switch (path.status)
                 {
                     case NavMeshPathStatus.PathComplete:
-                        Debug.Log($"{nmAgent.name} will be able to reach {moveTarget.name}.");
-                        nmAgent.SetDestination(moveTarget.transform.position);
+                        Debug.Log($"{nmAgent.name} will be able to reach {currentTarget}.");
+                        nmAgent.SetDestination(currentTarget.Position);
                         nmAgent.SetPath(path);
                         break;
                     case NavMeshPathStatus.PathPartial:
-                        Debug.LogWarning($"{nmAgent.name} will only be able to move partway to {moveTarget.name}.");
+                        Debug.LogWarning($"{nmAgent.name} will only be able to move partway to {currentTarget}.");
                         break;
                     default:
-                        Debug.LogError($"There is no valid path for {nmAgent.name} to reach {moveTarget.name}.");
+                        Debug.LogError($"There is no valid path for {nmAgent.name} to reach {currentTarget}.");
                         break;
 
                 }

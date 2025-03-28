@@ -237,6 +237,7 @@ GameObject:
   - component: {fileID: 6932358790409321682}
   - component: {fileID: 877094651978533760}
   - component: {fileID: 1737861358093984143}
+  - component: {fileID: 6097703603086468554}
   m_Layer: 0
   m_Name: FighterAgent
   m_TagString: Fighter
@@ -418,6 +419,22 @@ MonoBehaviour:
   <LoggerConfig>k__BackingField:
     <DebugMode>k__BackingField: 1
     <MaxLogSize>k__BackingField: 20
+--- !u!114 &6097703603086468554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4019513723376160125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cad3b3bcde6f9d4683e18ff1ef8766c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: 1
+  fighterBehaviours: []
+  amount: 100
+  lootable: 0
 --- !u!1 &4576799996309622467
 GameObject:
   m_ObjectHideFlags: 0

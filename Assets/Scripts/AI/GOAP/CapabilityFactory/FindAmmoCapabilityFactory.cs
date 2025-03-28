@@ -10,11 +10,11 @@ namespace HelicopterParents.Goap.Capabilities
     {
         public override ICapabilityConfig Create()
         {
-            var builder = new CapabilityBuilder("IdleCapability");
+            var builder = new CapabilityBuilder("FindAmmoCapability");
 
             builder.AddGoal<FindAmmoGoal>()
-                .AddCondition<NeedsAmmo>(Comparison.GreaterThanOrEqual, 1)
-                .SetBaseCost(2);
+                .AddCondition<NeedsAmmo>(Comparison.GreaterThanOrEqual, 60)
+                .SetBaseCost(1);
 
             builder.AddAction<FindAmmoAction>()
                 .AddEffect<NeedsAmmo>(EffectType.Increase)

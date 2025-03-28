@@ -13,7 +13,7 @@ namespace HelicopterParents.Goap.AgentTypes
             var factory = new AgentTypeBuilder("FighterAgent");
             
             factory.AddCapability<IdleCapabilityFactory>();
-
+            factory.AddCapability<FindAmmoCapabilityFactory>();
             return factory.Build();
         }
     }

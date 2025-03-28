@@ -5,13 +5,13 @@ using CrashKonijn.Goap.Runtime;
 using HelicopterParents.Goap.Behaviours;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.Rendering;
 
 namespace HelicopterParents.Goap.Sensors
 {
     public class FindAmmoMultiSensor : MultiSensorBase
     {
-        private List<AmmoItemsBehaviours> ammoItems;
-
+        public List<AmmoItemsBehaviours> ammoItems;
         public FindAmmoMultiSensor()
         {
             this.AddLocalWorldSensor<NeedsAmmo>((agent, references) =>
@@ -55,6 +55,7 @@ namespace HelicopterParents.Goap.Sensors
 
                 closest = item;
                 closestDistance = distance;
+                
             }
 
             return closest;

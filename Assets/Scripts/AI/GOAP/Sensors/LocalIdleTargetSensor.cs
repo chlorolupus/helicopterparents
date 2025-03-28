@@ -21,7 +21,7 @@ namespace HelicopterParents.Goap.Sensors
             var random = this.GetRandomPosition(agent);
 
             // If the existing target is a `PositionTarget`, we can reuse it and just update the position.
-            if (existingTarget is PositionTarget positionTarget)
+            if (existingTarget is PositionTarget positionTarget)    
             {
                 return positionTarget.SetPosition(random);
             }
@@ -36,7 +36,7 @@ namespace HelicopterParents.Goap.Sensors
             // Check if the position is within the bounds of the world.
             if (Bounds.Contains(position))
                 return position;
-
+    
             return Bounds.ClosestPoint(position);
         }
     }

@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
         {
             Vector2 mouseLookValue = mouseLookAction.ReadValue<Vector2>();
             searchLightObject.transform.position = this.transform.position + mainCamera.ScreenToWorldPoint( new Vector3(mouseLookValue.x, mouseLookValue.y, 30f));
-            Debug.Log("Searchlight position: " + mainCamera.ScreenToWorldPoint( new Vector3(mouseLookValue.x, mouseLookValue.y, 8f)));
+            // Debug.Log("Searchlight position: " + mainCamera.ScreenToWorldPoint( new Vector3(mouseLookValue.x, mouseLookValue.y, 8f)));
         }
         
         if (healthAction.IsPressed())

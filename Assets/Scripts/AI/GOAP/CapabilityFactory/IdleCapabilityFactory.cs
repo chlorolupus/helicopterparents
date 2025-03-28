@@ -14,7 +14,7 @@ namespace HelicopterParents.Goap.Capabilities
 
             builder.AddGoal<IdleGoal>()
                 .AddCondition<IsIdle>(Comparison.GreaterThanOrEqual, 1)
-                .SetBaseCost(2);
+                .SetBaseCost(200);
 
             builder.AddAction<IdleAction>()
                 .AddEffect<IsIdle>(EffectType.Increase)

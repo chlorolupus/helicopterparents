@@ -6,9 +6,9 @@ namespace HelicopterParents.Goap.Behaviours
 {
     public class BrainBehaviours : MonoBehaviour
     {        
-        private AgentBehaviour agent;
-        private GoapActionProvider provider;
-        private GoapBehaviour goap;
+        public AgentBehaviour agent;
+        public GoapActionProvider provider;
+        public GoapBehaviour goap;
         // Start is called once before the first execution of Update after the MonoBehaviour is created
 
         private void Awake()
@@ -22,7 +22,7 @@ namespace HelicopterParents.Goap.Behaviours
         }
         private void Start()
         {
-            this.provider.RequestGoal<IdleGoal>();
+            this.provider.RequestGoal<IdleGoal,FindAmmoGoal>();
         }
     }
 }
