@@ -9,6 +9,8 @@ TagManager:
   - Heal
   - Ammo
   - Fighter
+  - LightCover
+  - HeavyCover
   layers:
   - Default
   - TransparentFX
@@ -21,8 +23,8 @@ TagManager:
   - Player
   - Enemy
   - DebugViz
-  - 
-  - 
+  - LightCover
+  - HeavyCover
   - 
   - 
   - 
